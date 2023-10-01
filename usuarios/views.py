@@ -10,3 +10,7 @@ def index(request):
 def login(request):
     template = loader.get_template('usuarios/login.html')
     return HttpResponse (template.render())
+
+def home(request):
+    template = loader.get_template('usuarios/home.html')
+    return HttpResponse (template.render())

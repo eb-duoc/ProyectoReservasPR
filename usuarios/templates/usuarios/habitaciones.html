@@ -69,82 +69,70 @@
     <section class="vh-100">
         <div class="container py-5 h-80">
           <div class="row d-flex align-items-center justify-content-center h-100">
-            <div class="col-md-9 col-lg-8 col-xl-7">
-              <img src="{% static 'usuarios/imagenLogin2.jpeg' %}"
-                class="img-fluid" alt="Phone image">
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-4">
-                <form>
-                    <p class="text-left fs-4"> Check-in and check-out dates </p>         
-                    <input type='text' class="form-control" id='datepicker' style='width: 300px;' > <br>
-                    <input type='text' class="form-control" data-provide="datepicker" style='width: 300px;' >
-                </form>
-                    <div class="col"  style='background-color:#D9D9D9; margin-top: 5%; padding: 2%;'>
-                        <div class="input-group">
-                            <span class="input-group-btn"><button class="btn btn-default value-control" data-action="minus" data-target="numb"><span class="bi bi-dash-square"></span></button></span>
-                            <input type="text" value="1" class="form-control" id="numb" style='max-width: 50px;'>
-                            <span class="input-group-btn"><button class="btn btn-default value-control" data-action="plus" data-target="numb"><span class="bi bi-plus-square"></span></button></span>
-                            <div class="d-inline-block fs-5">Guests</div>
-                        </div>
+                <div class="col-md-6 col-lg-4 col-xl-4">
+                <img src="{% static 'usuarios/imagenLogin2.jpeg' %}"
+                    class="img-fluid" alt="Phone image">
+                </div>
+                <div class="col-md-9 col-lg-8 col-xl-7"> 
+                    <div class="row"> 
+                       <h2>Disponibilidad</h2> 
                     </div>
-
-                    <div class="col"  style='background-color:#D9D9D9; padding: 2%;'>
-                        <div class="input-group">
-                            <span class="input-group-btn"><button class="btn btn-default value-control" data-action="minus" data-target="hab"><span class="bi bi-dash-square"></span></button></span>
-                            <input type="text" value="1" class="form-control" id="hab" style='max-width: 50px;'>
-                            <span class="input-group-btn"><button class="btn btn-default value-control" data-action="plus" data-target="hab"><span class="bi bi-plus-square"></span></button></span>
-                            <div class="d-inline-block fs-5">Rooms</div>
-                        </div>
-                    </div>
-                    <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-lg w-100" style='margin-top:5%;' >Search</button>
+                    <div class="row"> 
+                        
+                        <table  class="table" style="border-color: #7F0387; border-width: 2;">
+                            <tr style="background-color: blueviolet;">
+                                
+                                <td style="background-color:#7F0387; color: white;">Tipo de habitación</td>
+                                <td style="background-color:#7F0387; color: white;">Habitación</td>
+                                <td style="background-color:#7F0387; color: white;">Capacidad</td>
+                                <td style="background-color:#7F0387; color: white;">Precio</td>
+                            </tr>
+                            {% for dato in habs %}
+                            <tr>
+                                
+                                <td>{{dato.tipoHab}}</td>
+                                <td>{{dato.comentario}}</td>
+                                <td>{{dato.capacidad}}</td>
+                                <td>{{dato.precioHab}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                        
+                     </div>
+                </div>
+          
             </div>
           
         </div>
+    </section>
 
-        </div>
-
-      </section>
+    <table border="1" class="table">
+        <tr>
+            <td>Id habitación</td>
+            <td>Tipo de habitación</td>
+            <td>Capacidad</td>
+            <td>Precio</td>
+        </tr>
+        {% for dato in habs %}
+        <tr>
+            <td>{{dato.idHab}}</td>
+            <td>{{dato.tipoHab}}</td>
+            <td>{{dato.capacidad}}</td>
+            <td>{{dato.precioHab}}</td>
+        </tr>
+        {% endfor %}
+    </table>
     
     <!-- Script -->
-    <script type="text/javascript">
-    $(document).ready(function(){
-        $('#datepicker').datepicker(); 
-    });
-    </script>
     
-    <script>
-    $(document).on('click','.value-control',function(){
-    var action = $(this).attr('data-action')
-    var target = $(this).attr('data-target')
-    var value  = parseFloat($('[id="'+target+'"]').val());
-    if ( action == "plus" ) {
-      value++;
-    }
-    if ( action == "minus" ) {
-      value--;
-    }
-    $('[id="'+target+'"]').val(value)
-    });
-    </script>
-      
-
         <div class="footer">
            <p>Todos los derechos reservados</p>
-         </div>
+        </div>
     
 </body>
 
 
     
-
-
-
-
-
-
-
-
 
 
 

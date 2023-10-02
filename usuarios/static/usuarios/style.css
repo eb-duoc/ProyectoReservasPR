@@ -1,9 +1,39 @@
+.navbar {
+    margin-top: 0% !important; 
+    background: #7F0387 !important; 
+    font-size: large;
+    padding: 12px;
+}
+
+.seccion-navbar {
+    margin: 3px auto !important;
+    margin-bottom: 10px;
+    width: 85%;
+}
+
+
+.titulo {
+padding-top: 5%;
+}
+
 .btn-primary {
     background: #7F0387 !important;
     border-color: #7F0387 !important;
 }
 
 form {background-color: #D9D9D9;
-    padding: 3%;
+    padding: 3% 3% 5% 3%;
 
 }
+
+.footer {
+    display: table;
+    bottom:0;
+    width:85%;
+    margin-left:auto;
+    margin-right: auto;
+    text-align: center;
+    background-color:#7F0387;
+    padding: 12px;
+}
+.footer p {color:#D9D9D9}

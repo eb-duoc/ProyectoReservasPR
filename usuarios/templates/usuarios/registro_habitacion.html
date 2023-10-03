@@ -37,7 +37,7 @@
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                         <ul class="navbar-nav">
                             <li class="nav-item active">
-                                <a class="nav-link" href="home.html">Home </a> <!--<span class="sr-only">(current)</span>-->
+                                <a class="nav-link" href="index.html">Home </a> <!--<span class="sr-only">(current)</span>-->
                             </li>
                             <li class="nav-item">
                                 <a href="{% url 'login'  %}" class="nav-item nav-link">About us</a> 
@@ -63,7 +63,7 @@
 
     </div>
 
-    <h1 class="titulo display-3 text-center">Welcome to Hotel Pacific Reef
+    <h1 class="titulo display-3 text-center">Vista Administración
     </h1>
 
     <section class="vh-100">
@@ -99,29 +99,26 @@
                         </table>
                         
                      </div>
+
+                     <div class="row">
+                        <div class="d-flex justify-content-around align-items-center mb-4">
+                            <a href="{% url 'registro_habitacion2'%}">Agregar habitación</a>
+                          </div>
+                     </div>
+
+
                 </div>
           
             </div>
+
+            
           
         </div>
+
+      
+
     </section>
 
-    <table border="1" class="table">
-        <tr>
-            <td>Id habitación</td>
-            <td>Tipo de habitación</td>
-            <td>Capacidad</td>
-            <td>Precio</td>
-        </tr>
-        {% for dato in habs %}
-        <tr>
-            <td>{{dato.idHab}}</td>
-            <td>{{dato.tipoHab}}</td>
-            <td>{{dato.capacidad}}</td>
-            <td>{{dato.precioHab}}</td>
-        </tr>
-        {% endfor %}
-    </table>
     
     <!-- Script -->
     
